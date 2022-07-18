@@ -1,5 +1,82 @@
+# Google-clone-App
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+## Table of contents
+
+- [Overview](#overview)
+  - [The challenge](#the-challenge)
+  - [Screenshot](#screenshot)
+  - [Links](#links)
+- [My process](#my-process)
+  - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
+  - [Useful resources](#useful-resources)
+- [Author](#author)
+- [Acknowledgments](#acknowledgments)
+
+## Overview
+
+### The challenge
+
+Users should be able to:
+
+- View the optimal layout for the site depending on their device's screen size
+- Search
+- view results
+- Navigate to another page
+
+### Screenshot
+
+![](public/screenshot.png)
+![](public/screenshot1.png)
+
+### Links
+
+- Solution URL: (https://github.com/faozziyyah/google-clone)
+- Live Site URL: (https://google-clone-faozziyyah.vercel.app/)
+
+## My process
+
+### Built with
+
+- CSS
+- [Tailwind](https://tailwindcss.com/) - Tailwind: CSS framework
+- [React](https://reactjs.org/) - React: JS library
+- [Material Ui Icons](https://mui.com/) - Material Ui Icons
+
+### What I learned
+
+- How to use material UI Icons in NextJs
+- Tailwind CSS
+
+```Next.js
+const router = useRouter();
+  const searchInputRef = useRef(null);
+
+  const search = e => {
+    e.preventDefault();
+
+    const term = searchInputRef.current.value;
+
+    if (!term) return;
+
+    router.push(`/search?term=${term}`);
+```
+```Next.js
+<input 
+    ref={searchInputRef} 
+    className="flex-grow w-full focus:outline-none" 
+    type="text" 
+    defaultValue={router.query.term} 
+/>
+            
+<XIcon  
+  className="h-7 text-gray-500 cursor-pointer transition duration-100 transform hover:scale125 sm:mr-3"
+  onClick={() =>  {searchInputRef.current.value = ""}}
+/>
+```
+
+### Useful resources
 ## Getting Started
 
 First, run the development server:
